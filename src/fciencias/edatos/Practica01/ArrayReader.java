@@ -1,4 +1,4 @@
-package fciencias.edatos.practica01;
+package fciencias.edatos.Practica01;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedReader;
@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 * @since Laboratorio de Estructuras de Datos 2022-1.
 */
 public class ArrayReader {
-    
+
     /**
      * Lee un arreglo unidimensional de un archivo de texto.
      * @param name el nombre del archivo.
@@ -50,7 +50,7 @@ public class ArrayReader {
                 }
                 index++;
             }
-            
+
             return result;
         } catch(FileNotFoundException fnfe){
             System.out.println("ARCHIVO "+name+" NO ENCONTRADO");

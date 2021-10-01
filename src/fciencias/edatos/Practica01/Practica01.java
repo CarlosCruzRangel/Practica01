@@ -1,4 +1,4 @@
-package fciencias.edatos.practica01;
+package fciencias.edatos.Practica01;
 import java.util.Arrays;
 
 /**
@@ -9,7 +9,7 @@ import java.util.Arrays;
 */
 public class Practica01{
 
-	/** 
+	/**
 	* Hace la mezcla de dos arreglos ordenados desde la primera posición hasta
 	* una posición límite
 	* @param array1 el primer arreglo a mezlar
@@ -21,14 +21,14 @@ public class Practica01{
 	public static int[] mergeSortedArray(int[] array1, int n, int[] array2, int m){
 		if(n > array1.length || m > array2.length)
 			throw new RuntimeException("Límites no válidos");
-		
-		int[] result = new int[n + m]; 
+
+		int[] result = new int[n + m];
 		//Usamos dos apuntadores para saber en que punto de ambos arreglos nos encontramos.
 		//el apuntador 1 solo se usará con el arreglo y, y el apuntador 2 con el arreglo 2.
 		int pointer1 = 0;
 		int pointer2 = 0;
 
-		
+
 		for(int i = 0; i < result.length; i++) {
 			//Aca, checamos que arreglo tiene el elemento menor en la posición a la que apuntamos.
 			if (array1[pointer1] < array2[pointer2]) {
@@ -47,7 +47,7 @@ public class Practica01{
 					result[i] = array1[pointer1];
 					pointer1++;
 				}
-			} 
+			}
 		}
 
 		return result;
@@ -64,7 +64,7 @@ public class Practica01{
 
 		//La idea de este algoritmo es usar la fórmula de Gauss para la suma de los n-1 números naturales consecutivos desde 0
 		//para hallar el resultado. También, regresamos false si board contiene un número fuera del rango  [0, n-1], de esta forma,
-		//nos aseguramos que no se pueda llegar al resultado de la formula, sumando sum y n ceros. 
+		//nos aseguramos que no se pueda llegar al resultado de la formula, sumando sum y n ceros.
 		final int sum = (length*(length-1))/2;
 
 		for (int i = 0; i < board.length; i++) {
@@ -118,11 +118,14 @@ public class Practica01{
 
 		// EJEMPLOS DE ACTIVIDAD 1
 		System.out.println("\nEJEMPLOS DE ACTIVIDAD 1\n");
-
+		float inicio = System.currentTimeMillis();
 		int[] arrayA1 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
 		int[] arrayA2 = ArrayReader.readArray(directorio1 + "ArrayA2.txt");
-		int[] resultA = mergeSortedArray(arrayA1, 3, arrayA2, 5);
+		int[] resultA = mergeSortedArray(arrayA1, 500, arrayA2, 700);
 		System.out.println("Resultado A: "+Arrays.toString(resultA));
+		float fin = System.currentTimeMillis();
+		System.out.println("El algoritmo 2 con entradas ArrayA1,500,ArrayA2,700 se tardo "+(fin-inicio)+" milisegundos");
+
 
 		int[] arrayB1 = ArrayReader.readArray(directorio1 + "ArrayB1.txt");
 		int[] arrayB2 = ArrayReader.readArray(directorio1 + "ArrayB2.txt");
